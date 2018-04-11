@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Multiply Two Numbers
+  </h1>
+</div>
+
+<div>
+  <div>Enter Value1 &nbsp; &nbsp;
+    <input [(ngModel)]="value1" (keyup)="restrictNumberVal1($event)" [style.border-color]="borderColorVal1" [style.font-weight]="fontWeightVal1"
+      type="text">
+  </div>
+  &nbsp;
+  <div>Enter Value2 &nbsp; &nbsp;
+    <input [(ngModel)]="value2" (keyup)="restrictNumberVal2($event)" [style.border-color]="borderColorVal2" [style.font-weight]="fontWeightVal2"
+      type="text">
+  </div>
+  &nbsp;
+  <div>
+    <input [disabled]=inputValid type="button" value="submit" (click)="postData()">
+  </div>
+
+  &nbsp;
+  <div *ngIf="calculatedResults">
+    <h2>
+      Previously Calculated Results
+    </h2>
+    <ul>
+      <li *ngFor="let calculatedResult of calculatedResults">
+        {{ calculatedResult.value1}} * {{ calculatedResult.value2}} = {{ calculatedResult.result}}
+      </li>
+    </ul>
+  </div>
+</div>
